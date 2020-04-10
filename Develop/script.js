@@ -12,31 +12,36 @@ let addLower = "";
 let addUpper = "";
 let addSpcChar = "";
 
-// Questions (I'm not sure that I have to console.log all the answers but it is nice to see them printing in the console)
-choseLen = prompt("Choose between 8 and 128 characters");
-while (choseLen < 8 || choseLen > 128) {
-  choseLen = prompt("Please, choose a number between 8 and 128 characters!")
-}
-console.log("Chosen length: " + choseLen)
-
-addNumber = confirm("Click OK if you would like NUMBERS and CANCEL if not.");
-console.log("OK for NUMBERS: " + addNumber);
-
-addLower = confirm("Click OK if you would like LOWERCASE characters and CANCEL if not.");
-console.log("OK for LOWERCASE: " + addLower);
-
-addUpper = confirm("Click OK if you would like UPPERCASE characters and CANCEL if not.");
-console.log("OK for UPPERCASE: " + addUpper);
-
-addSpcChar = confirm("Click OK if you would like SPECIAL characters and CANCEL if not.");
-console.log("OK for SPECIAL characters: " + addSpcChar);
+// Add event listener to generate button
+var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", writePassword);
 
 
-let allFalse = addNumber === false && addLower === false && addUpper === false && addSpcChar === false;
-if (choseLen = allFalse) {
-  alert("You need to pick at least one type of character");
+function writePassword() {
+  // Questions (I'm not sure that I have to console.log all the answers but it is nice to see them printing in the console)
+  choseLen = prompt("Choose between 8 and 128 characters");
+  while (choseLen < 8 || choseLen > 128) {
+    choseLen = prompt("Please, choose a number between 8 and 128 characters!")
   }
   
+  addNumber = confirm("Click OK if you would like NUMBERS and CANCEL if not.");
+  addLower = confirm("Click OK if you would like LOWERCASE characters and CANCEL if not.");
+  addUpper = confirm("Click OK if you would like UPPERCASE characters and CANCEL if not.");
+  addSpcChar = confirm("Click OK if you would like SPECIAL characters and CANCEL if not.");
+  
+  let allFalse = addNumber === false && addLower === false && addUpper === false && addSpcChar === false;
+  if (choseLen = allFalse) {
+    alert("You need to pick at least one type of character");
+    writePassword();
+  }
+};
+writePassword();
+
+console.log("Chosen length: " + choseLen)
+console.log("OK for NUMBERS: " + addNumber);
+console.log("OK for LOWERCASE: " + addLower);
+console.log("OK for UPPERCASE: " + addUpper);
+console.log("OK for SPECIAL characters: " + addSpcChar);
 
 
 
@@ -48,39 +53,48 @@ function password(length) {
   return pwd;
 }
 
+console.log(password(10, length));
+
 if (number === true) {
   addUpper = Math.floor(uppercase.length * Math.random())
 }
 
+// Write password to the #password input
+function writePass() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  
+  passwordText.value = password;
+}
+
+// console.log(password(10, length));
+console.log(writePassword);
+console.log(writePass);
+
 
 // console.log(allChar);
 // console.log(password);
-// console.log(password(10, length));
+
+// function writePassword() {
+  
+// }
+
+
+
+// writePassword.value = password(allChar.value, allChar);
 
 
 
 
 
 
-
-
-
-
-
-// // Assignment Code
+// Assignment Code
 // let generateBtn = document.querySelector("#generate");
 
 
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-  
-//   passwordText.value = password;
-// }
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// // // Add event listener to generate button
+// // generateBtn.addEventListener("click", writePassword);
 
 
 // writePassword.value = password(allChar.value, allChar);
