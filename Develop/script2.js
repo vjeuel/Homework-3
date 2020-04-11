@@ -19,31 +19,31 @@ generateBtn.addEventListener("click", trueConditions);
       //    typeChar();
       // };
       
-      // Function to determine how many characters
-      let askNumber = "";
-      let askLower = "";
-      let askUpper = "";
-      let askSpecChar = "";
-      function typeChar() {
-         askNumber = confirm("Click OK if you would like NUMBERS and CANCEL if not.");
-         askLower = confirm("Click OK if you would like LOWERCASE characters and CANCEL if not.");
-         askUpper = confirm("Click OK if you would like UPPERCASE characters and CANCEL if not.");
-         askSpecChar = confirm("Click OK if you would like SPECIAL characters and CANCEL if not.");
-      };
+// Function to determine how many characters
+let askNumber = "";
+let askLower = "";
+let askUpper = "";
+let askSpecChar = "";
+function typeChar() {
+   askNumber = confirm("Click OK if you would like NUMBERS and CANCEL if not.");
+   askLower = confirm("Click OK if you would like LOWERCASE characters and CANCEL if not.");
+   askUpper = confirm("Click OK if you would like UPPERCASE characters and CANCEL if not.");
+   askSpecChar = confirm("Click OK if you would like SPECIAL characters and CANCEL if not.");
+};
       
       
       
       // Maybe I need to use a IF IF here
       
       
-      // If True Conditions add to Box, Else start over
-      function trueConditions() {
-         passLength = prompt("Choose between 8 and 128 characters");
-         while (passLength < 8 || passLength > 128) {
-            passLength = prompt("Please, choose a number between 8 and 128 characters!");
-         };
-         typeChar();
-         console.log(passLength);
+// If True Conditions add to Box, Else start over
+function trueConditions() {
+   passLength = prompt("Choose between 8 and 128 characters");
+   while (passLength < 8 || passLength > 128) {
+      passLength = prompt("Please, choose a number between 8 and 128 characters!");
+   };
+   typeChar();
+   console.log(passLength);
          
    if (askNumber || askLower || askUpper || askSpecChar) {
       document.querySelector("#password").value = "";
@@ -88,11 +88,10 @@ function password(sumAllChar) {
    }
    return pwd;
 }
-console.log(sumAllChar);
 
 // Function to print the Password on screen
-function writePass(sumAllChar) {
-   var password = generatePassword();
+function password(sumAllChar) {
+   var password = generatePassword(sumAllChar);
    var passwordText = document.querySelector("#password");
    passwordText.value = password;
 };
