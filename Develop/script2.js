@@ -24,6 +24,7 @@ let askNumber = "";
 let askLower = "";
 let askUpper = "";
 let askSpecChar = "";
+let passLen = "";
 function typeChar() {
    askNumber = confirm("Click OK if you would like NUMBERS and CANCEL if not.");
    askLower = confirm("Click OK if you would like LOWERCASE characters and CANCEL if not.");
@@ -81,16 +82,16 @@ function trueConditions() {
 };
 
 // Loop Password Generator
-function password(sumAllChar) {
+function generatePassword(sumAllChar) {
    let pwd = "";
-   for (let i = 0; i < chooseLen; i++) {
+   for (let i = 0; i < passLen; i++) {
       pwd += sumAllChar.charAt(Math.floor(Math.random() * sumAllChar.length));
    }
    return pwd;
-}
+};
 
 // Function to print the Password on screen
-function password(sumAllChar) {
+function writePass(sumAllChar) {
    var password = generatePassword(sumAllChar);
    var passwordText = document.querySelector("#password");
    passwordText.value = password;
