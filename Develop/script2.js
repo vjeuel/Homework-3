@@ -24,7 +24,7 @@ let askNumber = "";
 let askLower = "";
 let askUpper = "";
 let askSpecChar = "";
-let passLen = "";
+let passLength = "";
 function typeChar() {
    askNumber = confirm("Click OK if you would like NUMBERS and CANCEL if not.");
    askLower = confirm("Click OK if you would like LOWERCASE characters and CANCEL if not.");
@@ -51,25 +51,25 @@ function trueConditions() {
       let sumAllChar = "";
       if (askNumber === true) {
          addNumber = Math.floor(Math.random() * number.length);
-         sumAllChar += number.charAt(addNumber);
+         sumAllChar += number;
       };
       console.log(askNumber);
       
       if (askLower === true) {
          addLower = Math.floor(Math.random() * lowercase.length);
-         sumAllChar += lowercase.charAt(addLower);
+         sumAllChar += lowercase;
       };
       console.log(askLower);
       
       if (askUpper === true) {
          addUpper = Math.floor(Math.random() * uppercase.length);
-         sumAllChar += uppercase.charAt(addUpper);
+         sumAllChar += uppercase;
       };
       console.log(askUpper);
       
       if (askSpecChar === true) {
          addSpecChar = Math.floor(Math.random() * specChar.length);
-         sumAllChar += specChar.charAt(addSpecChar);
+         sumAllChar += specChar;
       };
       console.log(askSpecChar);
       
@@ -84,8 +84,8 @@ function trueConditions() {
 // Loop Password Generator
 function generatePassword(sumAllChar) {
    let pwd = "";
-   for (let i = 0; i < passLen; i++) {
-      pwd += sumAllChar.charAt(Math.floor(Math.random() * sumAllChar.length));
+   for (let i = 0; i < passLength; i++) {
+      pwd += sumAllChar[(Math.floor(Math.random() * sumAllChar.length))];
    }
    return pwd;
 };
@@ -95,6 +95,7 @@ function writePass(sumAllChar) {
    var password = generatePassword(sumAllChar);
    var passwordText = document.querySelector("#password");
    passwordText.value = password;
+   console.log(password);
 };
 
 // let allFalse = askNumber === false && askLower === false && askUpper === false && askSpecChar === false;
