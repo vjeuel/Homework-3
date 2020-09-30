@@ -12,5 +12,5 @@ I took the liberty to do some styling also and created a grey page using neomorp
 
 - Update: Noticed that when the user typed a letter instead of a number the application was rolling normally and at the end it was not printing anything. So I addressed the issue by verifying if not a number and sending an alert for the user to enter a number instead.
 
-You can access the application [here](https://vjeuel.github.io/Homework-3/).
+You can access the application [here](https://vjeuel.github.io/Password_Generator/).
 </p> 
